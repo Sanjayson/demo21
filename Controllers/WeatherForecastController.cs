@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Cors;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -8,6 +9,7 @@ using System.Threading.Tasks;
 namespace demo21.Controllers
 {
     [ApiController]
+    [EnableCors("MyAllowSpecificOrigins")]
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
     {
@@ -23,6 +25,7 @@ namespace demo21.Controllers
             _logger = logger;
         }
 
+        [EnableCors("MyAllowSpecificOrigins")]
         [HttpGet]
         public IEnumerable<WeatherForecast> Get()
         {

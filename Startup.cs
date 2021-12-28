@@ -26,6 +26,16 @@ namespace demo21
         {
 
             services.AddControllers();
+            services.AddCors(options =>
+            {
+                options.AddPolicy(name: "MyAllowSpecificOrigins",
+                                  builder =>
+                                  {
+                                      builder.WithOrigins("http://localhost:4200", "http://demoangapp-git-demoapp.apps.cicd.arcus.soprasteria.com/"
+                                                          );
+                                  });
+            });
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -39,6 +49,7 @@ namespace demo21
             app.UseRouting();
 
             app.UseAuthorization();
+            app.UseCors("MyAllowSpecificOrigins");
 
             app.UseEndpoints(endpoints =>
             {
