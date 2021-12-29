@@ -35,7 +35,7 @@ namespace demo21
                                                           );
                                   });
             });
-            Console.WriteLine("New code added");
+            //Console.WriteLine("New code added");
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
