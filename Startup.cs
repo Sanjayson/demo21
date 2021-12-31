@@ -31,7 +31,7 @@ namespace demo21
                 options.AddPolicy(name: "MyAllowSpecificOrigins",
                                   builder =>
                                   {
-                                      builder.WithOrigins("http://localhost:4200", "http://demoangapp-git-demoapp.apps.cicd.arcus.soprasteria.com/"
+                                      builder.WithOrigins("http://localhost:4200", "http://demoangapp-v1-git-demoapp.apps.cicd.arcus.soprasteria.com/"
                                                           );
                                   });
             });
